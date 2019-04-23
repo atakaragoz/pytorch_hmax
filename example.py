@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 Run the HMAX model on the example images.
 
@@ -16,7 +17,7 @@ model = hmax.HMAX('./universal_patch_set.mat')
 
 # A folder with example images
 example_images = datasets.ImageFolder(
-    './example_images/',
+    './tesser_scan_images/',
     transform=transforms.Compose([
         transforms.Grayscale(),
         transforms.ToTensor(),
@@ -25,7 +26,7 @@ example_images = datasets.ImageFolder(
 )
 
 # A dataloader that will run through all example images in one batch
-dataloader = DataLoader(example_images, batch_size=10)
+dataloader = DataLoader(example_images, batch_size=21)
 
 # Determine whether there is a compatible GPU available
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
