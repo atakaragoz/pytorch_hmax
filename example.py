@@ -7,6 +7,7 @@ Authors: Marijn van Vliet <w.m.vanvliet@gmail.com>
 import torch
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
+from scipy.spatial.distance import pdist, squareform
 import pickle
 
 import hmax
